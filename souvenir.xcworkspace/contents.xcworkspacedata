@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:souvenir.xcodeproj">
+      location = "group:/Users/mac/Documents/2019IOSApps/souvenir/Souvenir.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
