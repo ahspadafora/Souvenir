@@ -9,18 +9,15 @@
 import UIKit
 
 class TestClass {
-    init(){}
+    init() {}
 }
 
 class ViewController: UIViewController {
 
     var testVariable: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        testVariable!.count
     }
 
-
 }
-
