@@ -35,7 +35,9 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUV-nV-lXH">
                                         <rect key="frame" x="220" y="84" width="123" height="30"/>
-                                        <state key="normal" title="Forgot Password?"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" red="0.29019607843137252" green="0.44313725490196076" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -48,23 +50,43 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Souvenir" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-ke-ZvI">
                                 <rect key="frame" x="119.5" y="90" width="136" height="34"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAB-XK-bZe">
-                                <rect key="frame" x="66" y="333" width="243" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="XZJ-dw-Bdm">
+                                <rect key="frame" x="44" y="364" width="286" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-2R-jMw">
+                                        <rect key="frame" x="14" y="0.0" width="258" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eqt-2R-jMw" secondAttribute="height" multiplier="81:16" id="5JT-rq-9dG"/>
+                                            <constraint firstAttribute="width" constant="258" id="oAd-cG-uRk"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Log In Button"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or img" translatesAutoresizingMaskIntoConstraints="NO" id="trw-wu-Zh2">
+                                        <rect key="frame" x="0.0" y="74" width="286" height="16"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vp1-jG-4S3">
+                                        <rect key="frame" x="14" y="113" width="258" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="258" id="9Lh-6j-47P"/>
+                                            <constraint firstAttribute="width" secondItem="vp1-jG-4S3" secondAttribute="height" multiplier="81:16" id="p0j-VZ-Wrq"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Sign Up Button"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="RAB-XK-bZe" secondAttribute="height" multiplier="81:16" id="EIm-nS-R0m"/>
-                                    <constraint firstAttribute="width" constant="243" id="XXJ-Zz-T2p"/>
+                                    <constraint firstItem="vp1-jG-4S3" firstAttribute="width" secondItem="vp1-jG-4S3" secondAttribute="height" multiplier="81:16" id="AJ0-1F-59L"/>
+                                    <constraint firstItem="vp1-jG-4S3" firstAttribute="width" secondItem="vp1-jG-4S3" secondAttribute="height" multiplier="81:16" id="fEP-PQ-zTU"/>
+                                    <constraint firstItem="eqt-2R-jMw" firstAttribute="width" secondItem="eqt-2R-jMw" secondAttribute="height" multiplier="81:16" id="sk5-4K-3rK"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Log In Button"/>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BTG-dh-VCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="K9r-vX-loH"/>
-                            <constraint firstItem="RAB-XK-bZe" firstAttribute="top" secondItem="BTG-dh-VCe" secondAttribute="bottom" constant="36" id="L5b-7J-e3l"/>
                             <constraint firstItem="oPy-ke-ZvI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="P9f-Zk-KAc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BTG-dh-VCe" secondAttribute="trailing" constant="16" id="ana-Oi-rfe"/>
                             <constraint firstItem="oPy-ke-ZvI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gmg-9f-nPz"/>
-                            <constraint firstItem="RAB-XK-bZe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kUK-0C-0dM"/>
                             <constraint firstItem="BTG-dh-VCe" firstAttribute="top" secondItem="oPy-ke-ZvI" secondAttribute="bottom" constant="59" id="xO6-Ee-qI4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,6 +110,8 @@
     </scenes>
     <resources>
         <image name="Log In Button" width="285" height="57"/>
+        <image name="Sign Up Button" width="285" height="57"/>
         <image name="Souvenir" width="136" height="34"/>
+        <image name="or img" width="286" height="16"/>
     </resources>
 </document>
