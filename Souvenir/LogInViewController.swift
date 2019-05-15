@@ -8,16 +8,10 @@
 
 import UIKit
 
-class TestClass {
-    init() {}
-}
+class LogInViewController: UIViewController {
 
-class ViewController: UIViewController {
-
-    var testVariable: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-//        testVariable!.count
     }
 
 }
