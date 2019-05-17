@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="Ojn-zL-CHT">
             <objects>
-                <viewController id="s8Z-SF-1tX" sceneMemberID="viewController">
+                <viewController id="s8Z-SF-1tX" customClass="FeedViewController" customModule="souvenir" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4E-Oa-fXV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,13 +45,21 @@
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="37.331334332833585"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Souvenir Tab Bar Controller-->
         <scene sceneID="LEC-OU-ctL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JO0-wS-OSX" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JO0-wS-OSX" customClass="SouvenirTabBarController" customModule="souvenir" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ydc-jN-s1R"/>
+                    <navigationItem key="navigationItem" id="ydc-jN-s1R">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="menuIcon" id="NFd-qk-pZ6">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="menuBttnPressed:" destination="JO0-wS-OSX" id="irv-4i-4AJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Qr-bA-yFX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -64,4 +72,7 @@
             <point key="canvasLocation" x="936.79999999999995" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="50" height="50"/>
+    </resources>
 </document>
