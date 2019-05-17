@@ -7,6 +7,7 @@ target 'souvenir' do
 
   # Pods for souvenir
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
 pod 'SwiftLint'
 
 
