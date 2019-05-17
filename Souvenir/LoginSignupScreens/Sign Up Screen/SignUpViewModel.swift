@@ -16,8 +16,6 @@ final class SignUpViewModel {
     var createdEmailAccountClosure: ((_ email: String?, _ password: String?, _ error: Error?) -> Void)?
     private var createdAccount: Bool = false {
         didSet {
-            print(self.email)
-            print(self.password)
             self.createdEmailAccountClosure?(email, password, error)
         }
     }
@@ -25,10 +23,11 @@ final class SignUpViewModel {
     init(authAPIService: AuthAPIServiceProtocol = AuthAPIService()) {
         self.authAPIService = authAPIService
     }
-    func createUser(email: String, password: String, username: String) {
-        authAPIService.createUserFromEmail(email: email, password: password, username: username) { (success, error, email) in
+    func createUser(email: String, password: String) {
+        authAPIService.createUserFromEmail(email: email, password: password) { (success, error, email) in
             self.email = email
             self.password = password
+            self.error = error
             self.createdAccount = success
         }
     }

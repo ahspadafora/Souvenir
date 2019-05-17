@@ -10,28 +10,29 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var phoneNumberAndEmailTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     // TO DO: TURN INTO USER MODEL
-    var username: String?
     var email: String?
     var password: String?
     var confirmedPassword: String?
-    var phoneNumber: String?
     lazy var signUpViewModel: SignUpViewModel = {
         return SignUpViewModel()
     }()
+    var alertView: UIAlertController = UIAlertController()
     // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViewModel()
+        addTapGestureForKeyboardDismissal()
     }
+    
     private func initializeViewModel() {
         signUpViewModel.createdEmailAccountClosure = { [weak self] (email, password, error) in
             if error != nil {
-                // TODO: display error
+                guard let errorMessage = error?.localizedDescription else { return }
+                self?.displayAlertView(with: errorMessage, alertView: self?.alertView)
                 return
             }
             if let email = email, let password = password {
@@ -43,8 +44,11 @@ class SignUpViewController: UIViewController {
     }
     //MARK: - IBAction functions
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        guard let email = email, let password = password, let username = username else { return }
-        signUpViewModel.createUser(email: email, password: password, username: username)
+        guard let email = email, let password = password else {
+            displayAlertView(with: "Please complete all required fields", alertView: alertView)
+            return
+        }
+        signUpViewModel.createUser(email: email, password: password)
     }
 }
 
@@ -56,18 +60,12 @@ extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let enteredText = textField.text else { return }
         switch textField {
-        case phoneNumberAndEmailTextField:
-            if enteredText.contains("@") {
-                self.email = enteredText
-            } else {
-                self.phoneNumber = enteredText
-            }
-        case usernameTextField:
-            self.username = enteredText
+        case emailTextField:
+           email = enteredText
         case passwordTextField:
-            self.password = enteredText
+            password = enteredText
         case confirmPasswordTextField:
-            self.confirmedPassword = enteredText
+            confirmedPassword = enteredText
         default:
             return
         }
