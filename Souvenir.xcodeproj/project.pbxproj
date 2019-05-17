@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0441D47D228E0FE200162867 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441D47C228E0FE200162867 /* SignUpViewController.swift */; };
+		0441D480228E364800162867 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441D47F228E364800162867 /* SignUpViewModel.swift */; };
 		0448145B228CA37700FBE627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448145A228CA37700FBE627 /* Assets.xcassets */; };
 		0448145D228CA6E500FBE627 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0448145C228CA6E500FBE627 /* Feed.storyboard */; };
 		0448145F228D668C00FBE627 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448145E228D668C00FBE627 /* LoginViewModel.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		0441D47C228E0FE200162867 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0441D47E228E311800162867 /* souvenir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = souvenir.entitlements; path = souvenir/souvenir.entitlements; sourceTree = "<group>"; };
+		0441D47F228E364800162867 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		0448145A228CA37700FBE627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Souvenir/Souvenir/Assets.xcassets; sourceTree = "<group>"; };
 		0448145C228CA6E500FBE627 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../../Souvenir/Souvenir/Feed.storyboard; sourceTree = "<group>"; };
 		0448145E228D668C00FBE627 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +102,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0441D481228E367100162867 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0448145E228D668C00FBE627 /* LoginViewModel.swift */,
+				0463707B22838349005C3424 /* LogInViewController.swift */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		0441D482228E367B00162867 /* Sign Up Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0441D47C228E0FE200162867 /* SignUpViewController.swift */,
+				0441D47F228E364800162867 /* SignUpViewModel.swift */,
+			);
+			path = "Sign Up Screen";
+			sourceTree = "<group>";
+		};
 		0463706D22838349005C3424 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				0463707922838349005C3424 /* AppDelegate.swift */,
-				0463707B22838349005C3424 /* LogInViewController.swift */,
-				0441D47C228E0FE200162867 /* SignUpViewController.swift */,
-				0448145E228D668C00FBE627 /* LoginViewModel.swift */,
+				0441D481228E367100162867 /* Login Screen */,
+				0441D482228E367B00162867 /* Sign Up Screen */,
 				0463707D22838349005C3424 /* Login.storyboard */,
 				0448145C228CA6E500FBE627 /* Feed.storyboard */,
 				046370822283834B005C3424 /* LaunchScreen.storyboard */,
@@ -424,6 +443,7 @@
 			files = (
 				0463707C22838349005C3424 /* LogInViewController.swift in Sources */,
 				0463707A22838349005C3424 /* AppDelegate.swift in Sources */,
+				0441D480228E364800162867 /* SignUpViewModel.swift in Sources */,
 				0441D47D228E0FE200162867 /* SignUpViewController.swift in Sources */,
 				0448145F228D668C00FBE627 /* LoginViewModel.swift in Sources */,
 			);

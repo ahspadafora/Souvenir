@@ -23,7 +23,6 @@ class AuthAPIService: AuthAPIServiceProtocol {
     }
     public func signUserInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
-            print(error?.localizedDescription)
             error == nil ? completion(true, nil): completion(false, error)
         }
     }
@@ -32,7 +31,6 @@ class AuthAPIService: AuthAPIServiceProtocol {
 final class LogInViewModel {
     var emailString: String?
     var error: Error?
-    
     private var isLoggedIn: Bool = false {
         didSet {
             self.updateLoginStatusClosure?(emailString, error)
@@ -49,31 +47,6 @@ final class LogInViewModel {
             self.emailString = email
             self.error = error
             self.isLoggedIn = success
-        }
-    }
-}
-
-final class SignUpViewModel {
-    var email: String?
-    var password: String?
-    var error: Error?
-    var createdEmailAccountClosure: ((_ email: String?, _ password: String?, _ error: Error?) -> Void)?
-    private var createdAccount: Bool = false {
-        didSet {
-            print(self.email)
-            print(self.password)
-            self.createdEmailAccountClosure?(email, password, error)
-        }
-    }
-    let authAPIService: AuthAPIServiceProtocol
-    init(authAPIService: AuthAPIServiceProtocol = AuthAPIService()) {
-        self.authAPIService = authAPIService
-    }
-    func createUser(email: String, password: String, username: String) {
-        authAPIService.createUserFromEmail(email: email, password: password, username: username) { (success, error, email) in
-            self.email = email
-            self.password = password
-            self.createdAccount = success
         }
     }
 }

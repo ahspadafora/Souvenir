@@ -32,7 +32,6 @@ class SignUpViewController: UIViewController {
         signUpViewModel.createdEmailAccountClosure = { [weak self] (email, password, error) in
             if error != nil {
                 // TODO: display error
-                print(error?.localizedDescription)
                 return
             }
             if let email = email, let password = password {
@@ -46,9 +45,6 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         guard let email = email, let password = password, let username = username else { return }
         signUpViewModel.createUser(email: email, password: password, username: username)
-    }
-    //MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 
