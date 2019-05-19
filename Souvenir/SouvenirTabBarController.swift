@@ -10,11 +10,25 @@ import UIKit
 
 class SouvenirTabBarController: UITabBarController {
 
+    lazy var viewModel: LogInViewModel = {
+        return LogInViewModel()
+    }()
+    let alertView: UIAlertController = UIAlertController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeViewModel()
     }
-    @IBAction func menuBttnPressed(_ sender: UIBarButtonItem) {
-        print("menu button pressed")
+    func initializeViewModel() {
+        viewModel.updateLoginStatusClosure = { [weak self] (error) in
+            print("Update login status closure called")
+            if let errorMessage = error?.localizedDescription {
+                self?.displayAlertView(with: errorMessage, alertView: self?.alertView)
+            } else {
+                self?.performSegue(withIdentifier: "unwindToLogInVCFromLogout", sender: nil)
+            }
+        }
     }
-    
+    @IBAction func signOutButtonTapped(_ sender: UIBarButtonItem) {
+        viewModel.logOutUser()
+    }
 }

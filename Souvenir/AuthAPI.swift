@@ -12,6 +12,7 @@ import FirebaseAuth
 protocol AuthAPIServiceProtocol {
     func createUserFromEmail(email: String, password: String, completion: @escaping (Bool, Error?, String?) -> Void)
     func signUserInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void)
+    func signOutCurrentUser(completion: @escaping (Error?) -> Void)
 }
 
 class AuthAPIService: AuthAPIServiceProtocol {
@@ -23,6 +24,14 @@ class AuthAPIService: AuthAPIServiceProtocol {
     public func signUserInWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             error == nil ? completion(true, nil): completion(false, error)
+        }
+    }
+    public func signOutCurrentUser(completion: @escaping (Error?)-> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        } catch let error {
+            completion(error)
         }
     }
 }

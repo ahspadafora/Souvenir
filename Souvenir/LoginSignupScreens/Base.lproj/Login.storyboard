@@ -195,7 +195,7 @@
                         <outlet property="confirmPasswordTextField" destination="EOX-Kw-oJa" id="Gai-BI-IbX"/>
                         <outlet property="emailTextField" destination="ZxO-z5-5m7" id="2NB-7A-6IJ"/>
                         <outlet property="passwordTextField" destination="Ur9-Gs-5P1" id="sOo-cl-9dh"/>
-                        <segue destination="oL3-cI-i0G" kind="unwind" identifier="unwindToLogInVC" unwindAction="unwindToLogInVC:" id="XXX-Eo-AY4"/>
+                        <segue destination="oL3-cI-i0G" kind="unwind" identifier="unwindToLogInVCFromSignUp" unwindAction="unwindToLogInVC:" id="XXX-Eo-AY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgg-Gj-Nce" userLabel="First Responder" sceneMemberID="firstResponder"/>

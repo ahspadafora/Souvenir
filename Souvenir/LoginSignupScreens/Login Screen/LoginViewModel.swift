@@ -27,4 +27,10 @@ final class LogInViewModel {
             self.isLoggedIn = success
         }
     }
+    func logOutUser() {
+        self.authAPIService.signOutCurrentUser { (error) in
+            self.error = error
+            self.isLoggedIn = error != nil
+        }
+    }
 }
