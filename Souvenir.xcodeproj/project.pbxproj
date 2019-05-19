@@ -52,7 +52,7 @@
 		0441D47E228E311800162867 /* souvenir.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = souvenir.entitlements; path = souvenir/souvenir.entitlements; sourceTree = "<group>"; };
 		0441D47F228E364800162867 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		0448145A228CA37700FBE627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Souvenir/Souvenir/Assets.xcassets; sourceTree = "<group>"; };
-		0448145C228CA6E500FBE627 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Feed.storyboard; path = ../../Souvenir/Souvenir/Feed.storyboard; sourceTree = "<group>"; };
+		0448145C228CA6E500FBE627 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		0448145E228D668C00FBE627 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0463707622838349005C3424 /* souvenir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = souvenir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0463707922838349005C3424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,15 +156,11 @@
 		0463707822838349005C3424 /* Souvenir */ = {
 			isa = PBXGroup;
 			children = (
-				0463707922838349005C3424 /* AppDelegate.swift */,
+				04B7136A2292243D007DEC05 /* Supporting Files */,
 				0466E203228F68BC0088875F /* LoginSignupScreens */,
-				0448145C228CA6E500FBE627 /* Feed.storyboard */,
-				04DD31B5228F75B200F65E03 /* SouvenirTabBarController.swift */,
-				04DD31B3228F73A800F65E03 /* FeedViewController.swift */,
+				04B71366229223EF007DEC05 /* Feed Screen */,
 				046370822283834B005C3424 /* LaunchScreen.storyboard */,
-				046370852283834B005C3424 /* Info.plist */,
-				0466E201228F68900088875F /* AuthAPI.swift */,
-				04DD31B1228F6F1100F65E03 /* UIViewController+Ext.swift */,
+				04B7136922922431007DEC05 /* Extensions */,
 			);
 			path = Souvenir;
 			sourceTree = "<group>";
@@ -190,11 +186,55 @@
 		0466E203228F68BC0088875F /* LoginSignupScreens */ = {
 			isa = PBXGroup;
 			children = (
+				04B7136822922422007DEC05 /* Custom Navigation */,
+				04B7136722922411007DEC05 /* API */,
 				0463707D22838349005C3424 /* Login.storyboard */,
 				0441D481228E367100162867 /* Login Screen */,
 				0441D482228E367B00162867 /* Sign Up Screen */,
 			);
 			path = LoginSignupScreens;
+			sourceTree = "<group>";
+		};
+		04B71366229223EF007DEC05 /* Feed Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0448145C228CA6E500FBE627 /* Feed.storyboard */,
+				04DD31B3228F73A800F65E03 /* FeedViewController.swift */,
+			);
+			path = "Feed Screen";
+			sourceTree = "<group>";
+		};
+		04B7136722922411007DEC05 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0466E201228F68900088875F /* AuthAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		04B7136822922422007DEC05 /* Custom Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				04DD31B5228F75B200F65E03 /* SouvenirTabBarController.swift */,
+			);
+			path = "Custom Navigation";
+			sourceTree = "<group>";
+		};
+		04B7136922922431007DEC05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04DD31B1228F6F1100F65E03 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04B7136A2292243D007DEC05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				046370852283834B005C3424 /* Info.plist */,
+				0463707922838349005C3424 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C182319A0D9019F9FB1B0ADC /* Frameworks */ = {
