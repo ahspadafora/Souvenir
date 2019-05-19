@@ -38,7 +38,7 @@ class LogInViewController: UIViewController {
         }
     }
     // MARK: - IBAction Functions
-    @IBAction func logginButtonTapped(_ sender: UIButton) {
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
         if let email = email, let password = password {
             logInViewModel.logInUser(email: email, password: password)
         }
@@ -55,7 +55,6 @@ class LogInViewController: UIViewController {
             guard let email = sourceViewController?.email, let password = sourceViewController?.password else { return }
             logInViewModel.logInUser(email: email, password: password)
         case "unwindToLogInVCFromLogout":
-            
             return
         default:
             return

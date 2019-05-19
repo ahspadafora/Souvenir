@@ -17,7 +17,7 @@ protocol AuthAPIServiceProtocol {
 
 class AuthAPIService: AuthAPIServiceProtocol {
     public func createUserFromEmail(email: String, password: String, completion: @escaping (Bool, Error?, String?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
             error == nil ? completion(true, nil, email) : completion(false, error, nil)
         }
     }

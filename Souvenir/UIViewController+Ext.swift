@@ -15,7 +15,7 @@ extension UIViewController {
         alertView.addAction(UIAlertAction(title: "Done", style: .cancel, handler: nil))
         self.present(alertView, animated: true)
     }
-    func addTapGestureForKeyboardDismissal(){
+    func addTapGestureForKeyboardDismissal() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
