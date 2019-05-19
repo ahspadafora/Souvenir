@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
             if let email = email, let password = password {
                 self?.email = email
                 self?.password = password
-                self?.performSegue(withIdentifier: "unwindToLogInVC", sender: nil)
+                self?.performSegue(withIdentifier: "unwindToLogInVCFromSignUp", sender: nil)
             }
         }
     }

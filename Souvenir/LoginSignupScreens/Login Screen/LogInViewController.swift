@@ -26,7 +26,6 @@ class LogInViewController: UIViewController {
         initializeViewModel()
         addTapGestureForKeyboardDismissal()
     }
-    
     // binding of loginViewModel to loginViewController
     private func initializeViewModel() {
         logInViewModel.updateLoginStatusClosure = { [weak self] (error) in
@@ -49,9 +48,18 @@ class LogInViewController: UIViewController {
     }
     // MARK: - Navigation Methods
     @IBAction func unwindToLogInVC(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as? SignUpViewController
-        guard let email = sourceViewController?.email, let password = sourceViewController?.password else { return }
-        logInViewModel.logInUser(email: email, password: password)
+        guard let segueIdentifer = unwindSegue.identifier else { return }
+        switch segueIdentifer {
+        case "unwindToLogInVCFromSignUp":
+            let sourceViewController = unwindSegue.source as? SignUpViewController
+            guard let email = sourceViewController?.email, let password = sourceViewController?.password else { return }
+            logInViewModel.logInUser(email: email, password: password)
+        case "unwindToLogInVCFromLogout":
+            
+            return
+        default:
+            return
+        }
     }
 
 }
